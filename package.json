@@ -27,6 +27,7 @@
     "chai-http": "^4.3.0",
     "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
+    "lodash": "^4.17.11",
     "mongoose": "^5.6.0",
     "restify": "^8.3.3",
     "rimraf": "^2.6.3",

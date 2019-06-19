@@ -7,12 +7,12 @@ export default class Ad {
     static ApplyRoutes(server: Server) {
 
         server.get('/', (req, res) => {
-            res.send(200);
+            res.send("200");
         });
 
         server.get('/items', function create(req: Request, res: Response, next: Next) {
-            res.send(urlCore.findAll());
-            return next();
+            return res.send(res.json(urlCore.findAll()));
+            // return next();
         });
 
         server.get('/item/:url_code', function create(req: Request, res: Response, next: Next) {

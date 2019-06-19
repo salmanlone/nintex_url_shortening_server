@@ -8,9 +8,7 @@ export default class App{
     private server: any;
     constructor() {
         this.server = restify.createServer();
-
         this.server.use(bodyParser.json());
-
         Routes.apply(this.server);
     }
     
