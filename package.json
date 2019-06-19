@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/salmanlone/nintex_url_shortening_server#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.134",
     "@types/mocha": "^5.2.7",
     "@types/restify": "^7.2.11",
     "body-parser": "^1.19.0",
@@ -32,6 +33,7 @@
     "restify": "^8.3.3",
     "rimraf": "^2.6.3",
     "shortid": "^2.2.14",
+    "supertest": "^4.0.2",
     "typescript": "^3.5.2",
     "typings": "^2.1.1",
     "valid-url": "^1.0.9"

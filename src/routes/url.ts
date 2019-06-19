@@ -1,30 +1,52 @@
 import { Server, Request, Response, Next } from 'restify';
 import urlCore from './../core/url/url';
-import _ = require('lodash');
+const validUrl = require("valid-url");
+const shortid = require("shortid");
+const errorUrl = 'http://localhost/error';
 
-export default class Ad {
+export default class UrlClient {
 
     static ApplyRoutes(server: Server) {
 
         server.get('/', (req, res) => {
-            res.send("200");
+            res.send(200);
         });
 
-        server.get('/items', function create(req: Request, res: Response, next: Next) {
-            return res.send(res.json(urlCore.findAll()));
-            // return next();
+        server.get('/:code', async (req, res, next) => {
+            const urlCode = req.params.code;
+            const item = await urlCore.FindByCode(urlCode);
+            if (item) {
+                console.log(item);
+                res.redirect(301, item.originalUrl, next);
+            } else {
+                res.redirect(301, errorUrl, next);
+            }
         });
 
-        server.get('/item/:url_code', function create(req: Request, res: Response, next: Next) {
-            //let foundAd = ModelAd.findOne(req.params.url_code);
-
-            // if (!_.isNull(foundAd)) {
-            //     res.json(foundAd);
-            //     return next();
-            // }
-
-            res.send(404, "The url does not exist, try adding new instead?");
-            return next();
+        server.post("/item", async (req, res) => {
+            const { originalUrl, shortBaseUrl } = req.body;
+            if (validUrl.isUri(shortBaseUrl)) {
+            } else {
+                return res
+                    .send(401, "Invalid Base Url");
+            }
+            const urlCode = shortid.generate();
+            const updatedAt = new Date();
+            if (validUrl.isUri(originalUrl)) {
+                try {
+                    const item = await urlCore.FindByOrignal(originalUrl);
+                    if (item) {
+                        res.send(200, item)
+                    } else {
+                        const item = await urlCore.Save(shortBaseUrl, urlCode, originalUrl, updatedAt);
+                        res.send(200, item);
+                    }
+                } catch (err) {
+                    res.send(401, "Invalid User Id");
+                }
+            } else {
+                return res.send(401, "Invalid Original Url");
+            }
         });
     }
 }

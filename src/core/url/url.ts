@@ -8,21 +8,24 @@ const errorUrl = 'http://localhost/error';
 
 
 export default class URL {
-    /**
-     *
-     */
-    constructor() {
-
+    
+    static FindByCode(urlCode: string){
+        return UrlShorten.findOne({ urlCode: urlCode });
     }
 
-    static findAll() {
-        const item = UrlShorten.find({}, function (err, allUrl) {
+    static FindByOrignal(urlCode: string){
+        return UrlShorten.findOne({ urlCode: urlCode });
+    }
 
-            console.log(allUrl);
-            // if(!_.isEnpty(allUrl)){
-            //     console.log('data is not empty!');
-            // }
-                return allUrl;
+    static async Save(shortBaseUrl: any, urlCode: any, originalUrl: any, updatedAt: Date) {
+        let shortUrl = shortBaseUrl + "/" + urlCode;
+        const item = new UrlShorten({
+            originalUrl,
+            shortUrl,
+            urlCode,
+            updatedAt
         });
+        await item.save();
+        return item;
     }
 }
