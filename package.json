@@ -23,14 +23,17 @@
   "dependencies": {
     "@types/mocha": "^5.2.7",
     "@types/restify": "^7.2.11",
+    "body-parser": "^1.19.0",
     "chai-http": "^4.3.0",
     "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "mongoose": "^5.6.0",
     "restify": "^8.3.3",
     "rimraf": "^2.6.3",
+    "shortid": "^2.2.14",
     "typescript": "^3.5.2",
-    "typings": "^2.1.1"
+    "typings": "^2.1.1",
+    "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "chai": "^4.2.0",
