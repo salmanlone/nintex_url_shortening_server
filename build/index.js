@@ -1,11 +1,11 @@
-var restify = require('restify');
-let serverPort = process.env.PORT || 7000;
-var server = restify.createServer();
-server.get('/', (req, res) => {
-    res.send(200);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const index_1 = require("./db/index");
+const app_1 = require("./app");
+const PORT = process.env.PORT || 5000;
+index_1.default.Connect().then(() => {
+    new app_1.default().GetServer().listen(PORT, () => {
+        console.log('Listening on port: ' + PORT);
+    });
 });
-server.listen(serverPort, function () {
-    console.log(`${server.name} listening at ${server.url}`);
-});
-module.exports = server;
 //# sourceMappingURL=index.js.map

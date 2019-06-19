@@ -1,15 +1,10 @@
-var restify = require('restify');
+import MongoDB from './db/index';
+import App from './app';
 
-let serverPort = process.env.PORT || 7000;
+const PORT = process.env.PORT || 5000;
 
-var server = restify.createServer();
-
-server.get('/', (req, res) => {
-    res.send(200);
+MongoDB.Connect().then(() => {
+    new App().GetServer().listen(PORT, () => {
+        console.log('Listening on port: ' + PORT);
+    });
 });
-
-server.listen(serverPort, function () {
-    console.log(`${server.name} listening at ${server.url}`);
-});
-
-module.exports = server;
