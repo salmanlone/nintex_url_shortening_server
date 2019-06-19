@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost/url-shortner';
+const mongoURI = 'mongodb+srv://admin:admin@cluster0-eb8xn.azure.mongodb.net/url-shortner';
 
 const connectOptions = {
   keepAlive: true,
