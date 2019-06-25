@@ -34,6 +34,7 @@
     "rimraf": "^2.6.3",
     "shortid": "^2.2.14",
     "supertest": "^4.0.2",
+    "swagger": "^0.7.5",
     "typescript": "^3.5.2",
     "typings": "^2.1.1",
     "valid-url": "^1.0.9"

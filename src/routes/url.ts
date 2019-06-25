@@ -8,8 +8,9 @@ export default class UrlClient {
 
     static ApplyRoutes(server: Server) {
 
-        server.get('/', (req, res) => {
+        server.get('/', (req, res, next) => {
             res.send(200);
+            next();
         });
 
         server.get('/:code', async (req, res, next) => {
