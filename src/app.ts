@@ -15,12 +15,12 @@ export default class App {
             bodyParser.urlencoded({
                 extended: true
             }));
-        restifySwaggerJsdoc.createSwaggerPage({
-            title: 'API documentation', // Page title
-            version: '1.0.0', // Server version
-            server: this.server, // Restify server instance created with restify.createServer()
-            path: '/docs/swagger' // Public url where the swagger page will be available
-        });
+        // restifySwaggerJsdoc.createSwaggerPage({
+        //     title: 'API documentation', // Page title
+        //     version: '1.0.0', // Server version
+        //     server: this.server, // Restify server instance created with restify.createServer()
+        //     path: '/docs/swagger' // Public url where the swagger page will be available
+        // });
     }
 
     public GetServer() {
