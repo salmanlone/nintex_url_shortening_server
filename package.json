@@ -31,6 +31,7 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.6.0",
     "restify": "^8.3.3",
+    "restify-cors-middleware": "^1.1.1",
     "restify-swagger-jsdoc": "^3.2.0",
     "rimraf": "^2.6.3",
     "shortid": "^2.2.14",
