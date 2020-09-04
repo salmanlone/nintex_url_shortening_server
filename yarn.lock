@@ -3926,10 +3926,10 @@ restify-errors@^8.0.0:
   optionalDependencies:
     safe-json-stringify "^1.0.4"
 
-restify-swagger-jsdoc@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/restify-swagger-jsdoc/-/restify-swagger-jsdoc-3.2.0.tgz#05e4640909f25c96db054344f3802a56e151f042"
-  integrity sha512-dYep0r0EAbQJF4xvECvPDesFH6oz7KOlHmX9ZqMIpjmvVyfFHyRs5KQA56abVhU4OD+he3/7X0mKXyXPkGoFpg==
+restify-swagger-jsdoc@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/restify-swagger-jsdoc/-/restify-swagger-jsdoc-3.2.1.tgz#0b01135a44e56f1cf37f65cfda05fb5d8e91d1d3"
+  integrity sha512-o95qQDjSW68t0uRbw2qIx+vpS17hRNb7N+EP9ERxdnJwBRfLLgR5Ko1gXc/h9Lgyk8wWHkRtZLNwuOG+5MMPCw==
   dependencies:
     mime-types "^2.1.21"
     restify-errors "^6.1.1"
